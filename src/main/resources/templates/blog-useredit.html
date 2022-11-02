@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<div th:each="el : ${post}">
+    <form method="post">
+
+        <input class="type-1" th:value="${el.login}" type="text" name="login" placeholder="Введите Заголовок поста"><br><br>
+        <input class="type-1" th:value="${el.password}" type="text" name="password" placeholder="Введите Имя поста"><br><br>
+        <input class="type-1" th:value="${el.phone}" type="text" name="phone" placeholder="Введите информацию о посте"><br><br>
+        <input class="type-1" th:value="${el.checks}" type="number" name="checks" placeholder="Введите текст поста"><br><br>
+        <label>Заблокированный
+            <input class="type-2" type="radio" name="accesss" value="0" th:checked="${!el.accesss}">
+            <span></span>
+        </label>
+
+        <label>Подверждённый
+            <input class="type-2" type="radio" name="accesss" value="1" th:checked="${el.accesss}">
+            <span></span>
+        </label><br>
+
+        <br>
+        <br>
+        <button type="submit">Добавить читателя</button>
+
+    </form>
+</div>
+
+</body>
+</html>

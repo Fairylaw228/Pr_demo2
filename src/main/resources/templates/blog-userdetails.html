@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+
+<div th:each="el : ${post}">
+    <hr>
+    <h3 th:text="${el.login}"></h3>
+    <h2 th:text="${el.password}"></h2>
+    <p th:text="${el.phone}"></p>
+    <p th:text="${el.checks}"></p>
+    <p th:text="${el.accesss}"></p>
+    <hr>
+  <a th:href=" '/blog/usermain/' + ${el.id} + '/edit'">Редактировать</a>
+  <form th:action=" '/blog/usermain/' + ${el.id} + '/remove'" method="post">
+    <button type="submit" class="btn btn-del">Удалить</button>
+  </form>
+</div>
+
+</body>
+</html>
+

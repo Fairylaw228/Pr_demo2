@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<div th:each="el : ${post}">
+    <form method="post">
+
+        <input class="type-1" th:value="${el.shapka}" type="text" name="shapka" placeholder="Введите Заголовок поста"><br><br>
+        <input class="type-1" th:value="${el.name}" type="text" name="name" placeholder="Введите Имя поста"><br><br>
+        <input class="type-1" th:value="${el.info}" type="text" name="info" placeholder="Введите информацию о посте"><br><br>
+        <input class="type-1" th:value="${el.maintext}" type="number" name="maintext" placeholder="Введите текст поста"><br><br>
+        <input class="type-1" th:value="${el.stat}" type="number" name="stat" placeholder="Введите количество просмотров"><br>
+        <br>
+        <br>
+        <button type="submit">Добавить новую статью</button>
+
+
+    </form>
+</div>
+
+</body>
+</html>

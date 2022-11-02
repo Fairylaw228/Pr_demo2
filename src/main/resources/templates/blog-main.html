@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<header>
+    <h1>Все статьи</h1>
+    <a href="/blog/filter">Поиск статей</a>
+    <a href="/blog/add">Добавить статью</a>
+    <a href="/blog/info">Комметарии</a>
+    <a href="/blog/usermain">Пользователи</a>
+</header>
+
+
+<div class="razdel" th:each="el : ${posts}">
+    <hr>
+    <h3 th:text="${el.title}"></h3>
+    <p th:text="${el.anons}"></p>
+    <br>
+    <a th:href=" '/blog/' + ${el.id}">Подробнее</a>
+    <hr>
+</div>
+</body>
+</html>

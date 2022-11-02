@@ -1,0 +1,98 @@
+input  {
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+
+    border-radius: 10px;
+    border: #ffffff;
+    empty-cells:show;
+    margin-left: 10% ;
+    margin-top: 13px;
+    background: #7a7575;
+}
+
+body {
+    font-weight: 400;
+    font-size: 15px;
+    background-image: url(https://i2.wp.com/wallpapercave.com/wp/wp6988787.png);
+}
+
+label {
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-left: 10px; }
+
+message {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+input::placeholder {
+    color: white;
+}
+
+
+
+button {
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+
+    border-radius: 10px;
+    border: #ffffff;
+    empty-cells:show;
+    margin-left: 10% ;
+    margin-top: 13px;
+    background: #7a7575;
+}
+
+p {
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-left: 60px;}
+
+h1 {
+    position: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-left: 60px;
+}
+
+a {
+position: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    margin-top: 50%;
+    margin-left: 100px;
+    text-decoration: none;
+}

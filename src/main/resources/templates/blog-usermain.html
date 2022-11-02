@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Читатель</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<h1>Читатели</h1>
+<a href="/blog/usermain/useradd">Создать читателя</a>
+<form th:action="${'/blog/usermain'}" method="post">
+    <div th:each="el : ${users}">
+        <hr>
+        <h3 th:text="${el.login}"></h3>
+        <h2 th:text="${el.password}"></h2>
+        <p th:text="${el.phone}"></p>
+        <a th:href=" '/blog/usermain/' + ${el.id}">Подробнее</a>
+<!--        <p th:text="${el.checks}"></p>-->
+<!--        <p th:text="${el.accesss}"></p>-->
+        <hr>
+    </div>
+</form >
+</body>
+</html>

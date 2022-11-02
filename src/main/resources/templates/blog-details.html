@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+<div th:each="el : ${post}">
+    <hr>
+  <h3 th:text="${el.title}"></h3>
+  <p th:text="${el.anons}"></p><br>
+  <p th:text="${el.full_text}"></p><br>
+  <a th:href=" '/blog/' + ${el.id} + '/edit'">Редактировать</a>
+    <hr>
+  <form th:action=" '/blog/' + ${el.id} + '/remove'" method="post">
+    <button type="submit" class="btn btn-del">Удалить</button>
+  </form>
+</div>
+
+</body>
+</html>

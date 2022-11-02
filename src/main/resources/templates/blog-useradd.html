@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <meta charset="UTF-8">
+    <title>Добавление читателя</title>
+</head>
+<body>
+
+<form th:action="${'/blog/usermain/useradd'}" method="post">
+    <hr>
+    <input class="type-1" type="text" name="login" placeholder="Логин"><br><br>
+    <input class="type-1" type="password" name="password" placeholder="Пароль"><br><br>
+    <input class="type-1" type="number" name="phone" placeholder="тел"><br><br>
+    <input class="type-1" type="number" name="checks" placeholder="ном"><br><br>
+    <label>Заблокированный
+        <input type="radio" name="accesss" value="0">
+        <span></span>
+    </label>
+
+    <label>Подверждённый
+        <input type="radio" name="accesss" value="1">
+        <span></span>
+    </label>
+
+    <br>
+    <br>
+    <button type="submit">Добавить читателя</button>
+    <hr>
+</form>
+
+<form method="post" th:action="${'/blog/usermain/useradd/result'}">
+    <input class="type-1" type="text" name="login" placeholder="Неточный поиск">
+    <button type="submit">Найти</button>
+    <div th:each="el : ${result}">
+        <hr>
+        <h3 th:text="${el.login}"></h3>
+        <h2 th:text="${el.password}"></h2>
+        <p th:text="${el.phone}"></p>
+        <p th:text="${el.checks}"></p>
+        <p th:text="${el.accesss}"></p>
+        <hr>
+    </div>
+</form>
+
+<form method="post" th:action="${'/blog/usermain/useradd/resultnocon'}">
+    <input class="type-1" type="text" name="login" placeholder="Точный поиск">
+    <button type="submit">Найти</button>
+    <div th:each="el : ${resultnocon}">
+        <hr>
+        <h3 th:text="${el.login}"></h3>
+        <h2 th:text="${el.password}"></h2>
+        <p th:text="${el.phone}"></p>
+        <p th:text="${el.checks}"></p>
+        <p th:text="${el.accesss}"></p>
+        <hr>
+    </div>
+</form>
+</body>
+</html>
+

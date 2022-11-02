@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/main.css">
+    <meta charset="UTF-8">
+    <title>Информационный пост</title>
+</head>
+<body>
+
+<form  method="post" th:action="${'/blog/info/result'}">
+    <input class="type-1" type="text" name="name" placeholder="Неточный поиск">
+    <button type="submit">Найти</button>
+    <div th:each="el : ${result}">
+        <hr>
+        <h3 th:text="${el.shapka}"></h3>
+        <h2 th:text="${el.name}"></h2>
+        <a th:href=" '/blog/' + ${el.id}">Подробнее</a>
+        <hr>
+    </div>
+</form>
+
+<form method="post" th:action="${'/blog/info/resultnocon'}">
+    <input class="type-1" type="text" name="name" placeholder="Точный поиск">
+    <button type="submit">Найти</button>
+    <div th:each="el : ${resultnocon}">
+        <hr>
+        <h3 th:text="${el.shapka}"></h3>
+        <h2 th:text="${el.name}"></h2>
+        <a th:href=" '/blog/' + ${el.id}">Подробнее</a>
+        <hr>
+    </div>
+</form>
+
+<form th:action="${'/blog/info'}" method="post">
+    <div th:each="el : ${infos}">
+        <hr>
+        <h3 th:text="${el.shapka}"></h3>
+        <h2 th:text="${el.name}"></h2>
+        <a th:href=" '/blog/info/' + ${el.id}">Подробнее</a>
+        <hr>
+    </div>
+</form >
+
+<form th:action="${'/blog/info'}" method="post">
+
+    <input class="type-1" type="text" name="shapka" placeholder="Введите Заголовок поста"><br><br>
+    <input class="type-1" type="text" name="name" placeholder="Введите Имя поста"><br><br>
+    <input class="type-1"  type="text" name="info" placeholder="Введите информацию о посте"><br><br>
+    <input class="type-1"  type="number" name="maintext" placeholder="Введите текст поста"><br><br>
+    <input class="type-1"  type="number" name="stat" placeholder="Введите количество просмотров"><br>
+    <br>
+    <br>
+    <button type="submit">Добавить новую статью</button>
+
+</form>
+
+</body>
+</html>
